@@ -1,0 +1,98 @@
+#choosePlayer{
+	width: 98%;
+	height: 500px;
+	background: rgba(0, 0, 0, 0.8);
+	color: white;
+	margin: 0;
+	padding: 10%;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	position: absolute;
+	z-index: 1;
+}
+
+#heading{
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1em;
+	padding: 10px;
+	color: yellowgreen;
+	border-bottom: 1px solid white;
+}
+
+input{
+	visibility:hidden;
+}
+
+#inputfield{
+	width: 60%;
+	margin: 20px auto;
+	font-size: 2.5em;
+}
+
+label{
+	cursor: pointer;
+	display: block;
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+label:hover{
+	background: yellowgreen;
+}
+
+#container{
+	width: 500px;
+	height: 500px;
+	margin: 25px auto;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.cells{
+	width: calc(500px / 3);
+	height: calc(500px / 3);
+	border: 2px solid #cdcdcd;
+	font-size: 8em;
+	color: #00adff;
+	text-align: center;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+#container div:nth-child(1n + 7){
+    border-bottom: none;
+}
+
+#container div:nth-child(3n + 1){
+    border-left: none;
+}
+
+#container div:nth-child(-n +3){
+    border-top: none;
+}
+
+#container div:nth-child(3n + 3){
+    border-right: none;
+}
+
+#gameResult {
+	font-size: 3em;
+	color: rgba(255, 255, 255, 0.9);
+	text-align: center;
+	font-family: sans-serif;
+	margin: 0;
+	width: 98%;
+	height: 500px;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 212px;
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 1;
+	display: none;
+}
