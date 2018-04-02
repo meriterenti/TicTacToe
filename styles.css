@@ -1,4 +1,4 @@
-#choosePlayer{
+#choosePlayer, #fieldProportions{
 	width: 98%;
 	height: 500px;
 	background: rgba(0, 0, 0, 0.8);
@@ -9,6 +9,35 @@
 	font-family: sans-serif;
 	position: absolute;
 	z-index: 1;
+}
+
+#choosePlayer{
+	display: none;
+}
+
+#fieldProportions form{
+	width: 30%;
+	margin: 20px auto;
+}
+
+button{
+	background:yellowgreen;
+	padding: 10px;
+	font-size: 1.5em;
+	color: #fff;
+	width: 180px;
+	cursor: pointer;
+	border: none;
+	display: block;
+	margin: 30px auto;
+}
+
+#quantity{
+	padding: 10px;
+	font-size: 1em;
+	width: 70px;
+	display: block;
+	margin: 0 auto;
 }
 
 #heading{
@@ -22,14 +51,20 @@
 	border-bottom: 1px solid white;
 }
 
-input{
-	visibility:hidden;
+#title{
+	display: block;
+    text-align: center;
+    margin-top: 80px;
 }
 
 #inputfield{
 	width: 60%;
 	margin: 20px auto;
 	font-size: 2.5em;
+}
+
+#inputfield input{
+	visibility:hidden;
 }
 
 label{

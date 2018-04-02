@@ -6,12 +6,20 @@
 	</head>
 
 	<body>
+		<div id = "fieldProportions">
+			<span id = "heading">Please choose field proportions</span>
+			<span id = "title"> Insert a number to identify the filed's size (from 3 to 100)</span> <br />
+			<form action="">
+				<input type="number" id="quantity" name="quantity" min="3" max="100" required/>
+				<button type="submit"> Submit </button>
+			</form>
+		</div>
 		<div id = "choosePlayer"> 
 			<span id = "heading">Please choose who will start the game</span>
 			<div id ="inputfield">
-			<input type="radio" id="human" name="choosePlayer" value="1">
+			<input type="radio" id="human" name="choosePlayer" value="1" />
 			<label for="human">Me</label>
-			<input type="radio" id="computer" name="choosePlayer" value="0">
+			<input type="radio" id="computer" name="choosePlayer" value="0" />
 			<label for="computer">The computer</label>
 			</div>
 		</div>

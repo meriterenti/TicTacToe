@@ -1,17 +1,28 @@
-let selectedPlayer;
+$("button").click(function(e){
+	e.preventDefault()
+	let fieldSize = parseInt($("#quantity").val());
+	if(fieldSize < 3 || fieldSize > 100){
+		$("#title").html("The number must be from 3 to 100")
+	} else {
+		$("#fieldProportions").hide();
+		$("#choosePlayer").css('display', 'block');
+		playGame(fieldSize);
+	}
+})
+
 $("label").click(function(){
 	setTimeout( "$('#choosePlayer').hide();", 300);
 })
-let currentValue = document.getElementById("container").getElementsByClassName("cells");
-let arr = []; arr.length = 9;
-let indexOfCell = [];
-let newGame = "Tap to start new game";
 
-const playGame = () => {
+const playGame = (fieldSize) => {
 	$( ".cells").unbind( "click" );
+	let indexOfCell = [];
+	let arr = []; arr.length = 9;
+	let currentValue = document.getElementById("container").getElementsByClassName("cells");
+	console.log(fieldSize);
 	$( "#inputfield input").unbind( "change" );
 	$('#inputfield input').on('change', function() {
-		selectedPlayer = $('input[name=choosePlayer]:checked', '#inputfield').val();
+		let selectedPlayer = $('input[name=choosePlayer]:checked', '#inputfield').val();
 		if(selectedPlayer == 0){
 			let randomnumber = Math.floor((Math.random() * 9));
 			$(currentValue[randomnumber]).append("0").off("click");
@@ -33,12 +44,12 @@ const playGame = () => {
 				}
 			}
 			let rand = indexOfCell[Math.floor(Math.random() * indexOfCell.length)];	
-			win = checkWin(arr);
+			win = checkWin(arr, currentValue);
 			if(!win){
 				setTimeout( () => $(currentValue[rand]).append("0").off("click"), 10);
 				arr[$(currentValue[rand]).index()] = 0;
 			}
-			checkWin(arr);
+			checkWin(arr, currentValue);
 			indexOfCell = [];
 			$('#gameResult').click(function() {
 				location.reload();
@@ -47,9 +58,10 @@ const playGame = () => {
 	});
 }
 
-playGame();
 
-const checkWin = (arr) => {
+
+const checkWin = (arr, currentValue) => {
+	let newGame = "Tap to start new game";
 	for(let i = 0; i < arr.length; i += 3){
 		if(typeof arr[i] !== 'undefined'){
 			if(arr[i] === arr[i + 1] && arr[i + 1] === arr[i + 2]){
